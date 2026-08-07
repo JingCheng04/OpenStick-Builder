@@ -1,5 +1,7 @@
+# x86转arm64 转译
 docker run --rm --privileged docker.io/multiarch/qemu-user-static --reset -p yes
 
+# Ubuntu Docker, 为后续需要必须挂载loop路径
 docker run -it --rm \
 	  --privileged \
 	    --name openstick-build \

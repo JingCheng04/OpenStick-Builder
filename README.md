@@ -9,6 +9,7 @@ This builder uses the precompiled [kernel](https://pkgs.postmarketos.org/package
 ## Build Instructions
 ### Build locally
 This has been tested to work on **Ubuntu 22.04**
+如果不是，建议使用Ubuntu 22.04 Docker环境
 - clone
   ```shell
   git clone --recurse-submodules https://github.com/kinsamanka/OpenStick-Builder.git
@@ -18,6 +19,9 @@ This has been tested to work on **Ubuntu 22.04**
 - build
   ```shell
   cd OpenStick-Builder/
+  # 如果不是Debian Based 系统，需要启动docker环境
+  ./run_docker.sh
+  # 如果使用docker，在docker内执行
   sudo ./build.sh
   ```
 #### Detailed
