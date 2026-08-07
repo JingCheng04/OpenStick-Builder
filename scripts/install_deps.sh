@@ -24,3 +24,9 @@ apt install -y \
     unzip \
     wget \
     e2fsprogs
+
+# 更新 debian 13 签名 keyring
+wget -O /tmp/dak.deb \
+    http://mirrors.bfsu.edu.cn/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2025.1_all.deb
+dpkg -i /tmp/dak.deb
+rm -f /tmp/dak.deb
