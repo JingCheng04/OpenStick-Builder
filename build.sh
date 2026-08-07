@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-apt update && apt install ca-certificates wget
+apt update && apt install ca-certificates wget -y
 
 # 下载启动引导文件
 # According to https://github.com/kinsamanka/OpenStick-Builder/issues/24
