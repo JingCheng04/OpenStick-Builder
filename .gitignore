@@ -8,3 +8,6 @@ dist
 files
 mnt
 rootfs
+*.zip
+*.tar
+*.gz

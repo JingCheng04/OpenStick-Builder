@@ -22,4 +22,5 @@ apt install -y \
     python3-pycryptodome \
     qemu-user-static \
     unzip \
-    wget 
+    wget \
+    e2fsprogs

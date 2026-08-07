@@ -22,8 +22,8 @@ PKG_CONFIG_PATH=${CHROOT}/usr/lib/aarch64-linux-gnu/pkgconfig \
         --prefix=/usr \
         --with-sysroot=${CHROOT}
 )
-make -C build DESTDIR=$(pwd)/dist CFLAGS="--sysroot=${CHROOT}" install
-make -C build CFLAGS="--sysroot=${CHROOT}" install
+make -C build DESTDIR=$(pwd)/dist CFLAGS="--sysroot=${CHROOT}" install -j$(nproc)
+make -C build CFLAGS="--sysroot=${CHROOT}" install -j$(nproc)
 
 rm -rf build/*
 PKG_CONFIG_PATH=${CHROOT}/usr/lib/pkgconfig:${CHROOT}/usr/lib/aarch64-linux-gnu/pkgconfig \
@@ -38,7 +38,7 @@ PKG_CONFIG_PATH=${CHROOT}/usr/lib/pkgconfig:${CHROOT}/usr/lib/aarch64-linux-gnu/
         -S ${SRCDIR}/gt/source \
         -B build
 
-make -C build DESTDIR=$(pwd)/dist install
+make -C build DESTDIR=$(pwd)/dist install -j$(nproc)
 
 rm -rf dist/usr/share dist/usr/lib/cmake dist/usr/lib/pkgconfig \
     dist/usr/lib/*a dist/usr/bin/ga* dist/usr/bin/s* dist/usr/include

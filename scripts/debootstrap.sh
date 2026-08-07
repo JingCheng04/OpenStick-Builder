@@ -7,16 +7,17 @@ HOST_NAME=${HOST_NAME=openstick-debian}
 rm -rf ${CHROOT}
 
 debootstrap --foreign --arch arm64 \
-    --keyring /usr/share/keyrings/debian-archive-keyring.gpg ${RELEASE} ${CHROOT}
+    --keyring /usr/share/keyrings/debian-archive-keyring.gpg ${RELEASE} ${CHROOT} \
+    http://mirrors.bfsu.edu.cn/debian
 
 cp $(which qemu-aarch64-static) ${CHROOT}/usr/bin
 
 chroot ${CHROOT} qemu-aarch64-static /bin/bash /debootstrap/debootstrap --second-stage
 
 cat << EOF > ${CHROOT}/etc/apt/sources.list
-deb http://deb.debian.org/debian ${RELEASE} main contrib non-free-firmware
-deb http://deb.debian.org/debian-security/ ${RELEASE}-security main contrib non-free-firmware
-deb http://deb.debian.org/debian ${RELEASE}-updates main contrib non-free-firmware
+deb http://mirrors.bfsu.edu.cn/debian ${RELEASE} main contrib non-free-firmware
+deb http://mirrors.bfsu.edu.cn/debian-security/ ${RELEASE}-security main contrib non-free-firmware
+deb http://mirrors.bfsu.edu.cn/debian ${RELEASE}-updates main contrib non-free-firmware
 EOF
 
 mount -t proc proc ${CHROOT}/proc/

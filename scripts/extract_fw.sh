@@ -1,6 +1,8 @@
 #!/bin/sh -e
 
-SRC="https://archive.org/download/dragonboard-410c-bootloader-emmc-linux-176/dragonboard-410c-bootloader-emmc-linux-176.zip"
+# URL according to https://github.com/kinsamanka/OpenStick-Builder/issues/24
+# SRC="https://archive.org/download/dragonboard-410c-bootloader-emmc-linux-176/dragonboard-410c-bootloader-emmc-linux-176.zip"
+SRC="./dragonboard-410c-bootloader-emmc-linux-176.zip"
 SHA256=a37c4e82a970ae2350fcfc7180559caf1dc3928e7c169316fe4ab899b7d305ad
 FNAME=$(basename ${SRC})
 
@@ -43,7 +45,8 @@ dd if=${TMPDIR}/gpt.img bs=512 skip=2 count=32 >> files/gpt_both0.bin
 dd if=${TMPDIR}/gpt.img bs=512 skip=350241 >> files/gpt_both0.bin
 
 # extract Qualcom firmware
-wget -P ${TMPDIR} ${SRC}
+# wget -P ${TMPDIR} ${SRC}
+cp ${SRC} ${TMPDIR}
 
 echo "${SHA256} ${TMPDIR}/${FNAME}" | sha256sum -c
 
