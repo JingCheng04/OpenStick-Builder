@@ -12,7 +12,8 @@ This has been tested to work on **Ubuntu 22.04**
 如果不是，建议使用Ubuntu 22.04 Docker环境
 - clone
   ```shell
-  git clone --recurse-submodules https://github.com/kinsamanka/OpenStick-Builder.git
+  # 原项目：https://github.com/kinsamanka/OpenStick-Builder
+  git clone --recurse-submodules https://github.com/JingCheng04/OpenStick-Builder.git
   cd OpenStick-Builder/
   ```
 #### Quick
