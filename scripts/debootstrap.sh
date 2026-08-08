@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 CHROOT=${CHROOT=$(pwd)/rootfs}
-RELEASE=${RELEASE=stable}
+RELEASE=${RELEASE=trixie}
 HOST_NAME=${HOST_NAME=openstick-debian}
 
 rm -rf ${CHROOT}
