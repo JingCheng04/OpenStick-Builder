@@ -5,6 +5,9 @@ This builder uses the precompiled [kernel](https://pkgs.postmarketos.org/package
 
 > [!NOTE]
 > This branch generates a `debian` image, use the [alpine branch](https://github.com/kinsamanka/OpenStick-Builder/tree/alpine) for an `alpine` image.
+> <br>
+> 默认编译Debian Trixie (在`scripts/debootstrap.sh` RELEASE=${RELEASE=trixie}处指定版本，若改系统版本，部分软件包版本也要对应更改)
+> 默认使用国内镜像构建，多线程编译。Docker 国内镜像请自行配置。
 
 ## Build Instructions
 ### Build locally
