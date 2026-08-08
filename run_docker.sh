@@ -8,5 +8,5 @@ sudo docker run -it --rm \
 	      -v "$(pwd)":/OpenStick-Builder \
 	        -v /dev:/dev \
 		  -w /OpenStick-Builder \
-		  docker.io/ubuntu:22.04 \
+		  docker.io/ubuntu:24.04 \
 		      /bin/bash
