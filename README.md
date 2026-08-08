@@ -8,11 +8,13 @@ This builder uses the precompiled [kernel](https://pkgs.postmarketos.org/package
 
 ## Build Instructions
 ### Build locally
-This has been tested to work on **Ubuntu 22.04**
-如果不是，建议使用Ubuntu 22.04 Docker环境
+<del>This has been tested to work on **Ubuntu 22.04**</del>
+<br>
+**建议使用Ubuntu 24.04 Docker 容器**(运行 `run\_docker.sh`)
 - clone
   ```shell
   # 原项目：https://github.com/kinsamanka/OpenStick-Builder
+  # Don't forget to install submodules
   git clone --recurse-submodules https://github.com/JingCheng04/OpenStick-Builder.git
   cd OpenStick-Builder/
   ```
@@ -152,7 +154,7 @@ Edit [`scripts/setup.sh`](scripts/setup.sh) to add/remove packages. Note that th
   | username | user |
   | password | 1 |
  
-- If your device is not based on **UZ801**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
+- If your device is not based on **UFI001C**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
   ```shell
   sed -i 's/yiming-uz801v3/<BOARD>/' /boot/extlinux/extlinux.conf
   ```
