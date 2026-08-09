@@ -160,6 +160,9 @@ Edit [`scripts/setup.sh`](scripts/setup.sh) to add/remove packages. Note that th
   | ----- | ---- |
   | username | user |
   | password | 1 |
+
+<br>
+**如果Network Manager 无法启动Wifi Hotspot，请在Network Manager 中删除热点配置，并使用Hostapd尝试。**
  
 - If your device is not based on **UFI001C**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
   ```shell
