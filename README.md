@@ -115,6 +115,10 @@ Edit [`scripts/setup.sh`](scripts/setup.sh) to add/remove packages. Note that th
   edl e boot
   edl reset
   ```
+**如果aboot无法引导fastboot或者报错, 请使用**`adb reboot bootloader`**进入fastboot。**
+<br>
+如果出厂自带的Android 默认未开启adb, 请参考：[开启adb](https://www.bilibili.com/opus/814871462043189297)
+<br>
 - Flash firmware
   ```shell
   fastboot flash partition gpt_both0.bin
