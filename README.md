@@ -163,6 +163,16 @@ Edit [`scripts/setup.sh`](scripts/setup.sh) to add/remove packages. Note that th
 
 <br>
 **如果Network Manager 无法启动Wifi Hotspot，请在Network Manager 中删除热点配置，并使用Hostapd尝试。**
+<br>
+
+```shell
+# 切换到root
+su
+# 使用Hostapd 配置wifi（如果Network Manager开启wifi失败时尝试）
+curl -fsSL https://raw.githubusercontent.com/JingCheng04/OpenStick-Builder/main/setup-wifi.sh | bash
+# 或者使用镜像站：https://gh-proxy.org/https://raw.githubusercontent.com/JingCheng04/OpenStick-Builder/main/setup-wifi.sh
+```
+<br>
  
 - If your device is not based on **UFI001C**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
   ```shell
