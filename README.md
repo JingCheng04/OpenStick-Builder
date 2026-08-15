@@ -168,13 +168,25 @@ Edit [`scripts/setup.sh`](scripts/setup.sh) to add/remove packages. Note that th
 ```shell
 # 切换到root
 su
+# 安装iw
+apt update && apt install iw
 # 使用Hostapd 配置wifi（如果Network Manager开启wifi失败时尝试）
-curl -fsSL https://raw.githubusercontent.com/JingCheng04/OpenStick-Builder/main/setup-wifi.sh | bash
+# 下载脚本
+curl -O https://raw.githubusercontent.com/JingCheng04/OpenStick-Builder/main/setup-wifi.sh
+# 编辑setup-wifi.sh 中的内容（省略），然后运行
+chmod +x ./setup-wifi.sh
+./setup-wifi.sh
 # 或者使用镜像站：https://gh-proxy.org/https://raw.githubusercontent.com/JingCheng04/OpenStick-Builder/main/setup-wifi.sh
 ```
 <br>
+注意修改setup-wifi.sh 中的内容。
+<br>
+在UFI103s上测试成功
+<br>
+<br>
+**注意：UZ801 可能有无法开启Wifi Hotspot 的bug, 无论使用Network Manager 还是Hostapd.**
  
-- If your device is not based on **UFI001C**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
+- If your device is not based on **UZ801**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
   ```shell
   sed -i 's/yiming-uz801v3/<BOARD>/' /boot/extlinux/extlinux.conf
   ```
