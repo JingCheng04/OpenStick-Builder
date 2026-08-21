@@ -184,7 +184,7 @@ chmod +x ./setup-wifi.sh
 在UFI103s上测试成功
 <br>
 <br>
-**注意：UZ801 可能有无法开启Wifi Hotspot 的bug, 无论使用Network Manager 还是Hostapd.**
+**注意：UZ801 可能有无法开启Wifi, 请使用802.11b协议**
  
 - If your device is not based on **UZ801**, modify `/boot/extlinux/extlinux.conf` to use the correct devicetree
   ```shell
